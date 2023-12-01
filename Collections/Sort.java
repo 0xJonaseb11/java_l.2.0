@@ -12,7 +12,12 @@ public class SortNumbers {
         numbers.add(14);
         numbers.add(37);
 
-        // first approach
+         ///////////////////////
+        //// first approach  ////
+        //// sort keyword //////
+        ///////////////////////
+
+        
         // display original list
         System.out.println("Original List of Numbers: ", numbers);
         
@@ -25,6 +30,10 @@ public class SortNumbers {
         // sort in descending order
         Collections.revert(numbers);
 
+
+        /////////////////////////////////
+        /////// Comparator /////////////
+        ///////////////////////////////
 
         Comparator<Integer> comp = new Comparator<Integer>();
 
