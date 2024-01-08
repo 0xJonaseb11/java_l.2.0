@@ -87,4 +87,59 @@ class Programmer extends Employee {
   * Eating...
   */
 
+ 3. Hierachical Inheritance
+ ==========================
+
+ class Animal {
+    void eat() {
+        System.out.println("Eating...");
+    }
+ }
+
+ class Dog extends Animal {
+    void bark() {
+        System.out.println("Barking...");
+    }
+ }
+
+ class Cat extends Animal {
+    void meow() {
+        System.out.println("Meowing...");
+    }
+ }
+
+ class TestInheritance3 {
+    public static void main(String args[]) {
+        Cat c = new Cat();
+        c.meow();
+        c.eat();
+        // c.bark(); // C.T.Error
+    }
+ }
+
+ /** WHY MULTIPLE INHERITANCE IS NOT SUPPORTED IN JAVA 
+  * To reduce complexity and simplify the language
+ */
+
+ class A {
+    void msg() {
+        System.out.println("Hello");
+    }
+ }
+
+ class B {
+    void msg() {
+        System.out.println("Welcome");
+    }
+ }
+
+ class C extends A, B { //Suppose if it were
+    public static void main(String args[]) {
+        C obj = new C();
+        obj.msg(); // Now which msg() method would be invoked?
+    }
+ } // Compile Time error
+
  
+
+
