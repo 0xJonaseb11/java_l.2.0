@@ -273,10 +273,104 @@ class Programmer extends Employee {
     }
  } // Output: Compile Time Error
 
- 
+ /**
+  * 3. Java final class
+  * Making a class final, means it cannot be extended
+  */
 
+ class Bike {}
 
+ class Honda1 extends Bike {
+    void run() {
+        System.out.println("Running safely with 100kmph");
 
+        public static void main(String args[]) {
+            Honda1 honda = new Honda1();
+            honda.run();
+        }
+    }
+ } // Output: Compile Time Error
+
+ /**
+  * Qn: Is final method inherited?
+  * yes, it is inherited but not overriden
+   */
+
+  class Bike {
+    final void run() {
+        System.out.println("Runnning...");
+    }
+  }
+  
+  class Honda2 extends extends Bike {
+    public static void main(String args[]) {
+        new Honda2().run();
+    }
+  } // Output: Running...
+
+  /**
+   * Qn2: What is blank or an unitialized variable?
+   * A final variable is a final variable that is not initialized at
+   * the time of declaration
+   * If you want to do so,  you can prefer to use a constructor maybe
+   * 
+   * Blank final variable
+   */
+
+  class Student {
+    int id;
+    String name;
+    final String PAN_CARD_NUMBER;
+  }
+  /** Q3: Can we initialize blank final variable??
+   * yes, nut only in constructor
+   */ 
+
+  class Bike10 {
+    final int speedLimit; // blank final variable
+
+    Bike10() {
+        speedLimit = 70;
+        System.out.println(speedLimit);
+    }
+
+    public static void main(String args[]) {
+        new Bike10();
+    }
+  } // Output: 70
+
+  /** Static blank final variable
+   * I can only initialized in static block hence not initialized at declaration time
+   */
+
+  class A {
+    static final int data; // static blank final variable
+    static { data = 50};
+
+    public static void main(String args[]) {
+        System.out.println(A.data);
+    }
+  }
+
+  /** Qn4: What is a final parameter??
+   * If you declare a parameter as final, you cannot change its value
+   */
+
+  class Bike11 {
+    int cube(final int n) {
+        n = n + 2; // can't be changed as n is final
+        n*n*n;
+    }
+
+    public static void main(String args[]) {
+        Bike11 b = new Bike11();
+        b.cube(5);
+    }
+  } // Output: Compile Time Error
+
+  /** Qn5: Can we declare a constructor final??
+   * No, Because a constructor is never inherited
+   */
 
 
 
