@@ -371,9 +371,3 @@ class Programmer extends Employee {
   /** Qn5: Can we declare a constructor final??
    * No, Because a constructor is never inherited
    */
-
-
-
- 
-
-
