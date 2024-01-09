@@ -45,7 +45,7 @@ class Programmer extends Employee {
     }
  }
 
- /** OUT PUT
+ /** OUTPUT
   * Barking...
   * Eating...
   */
@@ -81,7 +81,7 @@ class Programmer extends Employee {
     }
  }
 
- /** OUT PUT
+ /** OUTPUT
   * Weeping...
   * Barking...
   * Eating...
@@ -141,7 +141,9 @@ class Programmer extends Employee {
  } // Compile Time error
 
 
- // Super keyword
+ /** Super keyword
+  * 1. Super is used to refer immediate parent class instance variable
+  */
  class Animal {
     String color = " White";
  }
@@ -149,8 +151,88 @@ class Programmer extends Employee {
  class Dog extends Animal {
     String color = "Black";
 
-    void printColor() {}
+    void printColor() {
+        System.out.println(color); // prints color of dog class
+        System.out.println(super.color); // prints color of Animal class
+    }
  }
+
+ class TestSuper {
+    public static void main(String args[]) {
+        Dog d = new Dog();
+        d.printColor();
+    }
+ }
+
+ /** OUTPUT
+  * Black
+  * White
+  */
+
+ /**
+  * 2. Super can be used to invoke parent class methof
+  */
+
+ class Animal {
+    void eat() {
+        System.out.println("Eating...");
+    }
+ }
+
+ class Dog extends Animal {
+    void eat() {
+        System.out.println("Eating bread...");
+    }
+    void bark() {
+        System.out.println("Barking...");
+    }
+    void work() {
+        super.eat();
+        bark();
+    }
+ }
+
+ class TestSuper2 {
+    public static void main (String args []) {
+        Dog d = new Dog();
+        d.work();
+    }
+ }
+
+ /** OUTPUT
+  * Eating...
+  * Barking...
+  */
+
+ /**
+  * 3. Super is used to invoke parent class constructor
+  */
+
+ class Animal {
+    Animal() {
+        System.out.println("Animal is created");
+    }
+ }
+
+ class Dog extends Animal {
+    Dog() {
+        super();
+        System.out.println("Dog is created");
+    }
+ }
+
+ class TestSuper3 {
+    public static void main(String args[]) {
+        Dog d = new Dog();
+    }
+ }
+
+ /** OUTPUT
+  * Animal is created
+  * Dog is created
+  */
+
+
 
  
 
