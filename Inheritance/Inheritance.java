@@ -140,6 +140,18 @@ class Programmer extends Employee {
     }
  } // Compile Time error
 
+
+ // Super keyword
+ class Animal {
+    String color = " White";
+ }
+ 
+ class Dog extends Animal {
+    String color = "Black";
+
+    void printColor() {}
+ }
+
  
 
 
