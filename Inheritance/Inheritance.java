@@ -232,6 +232,52 @@ class Programmer extends Employee {
   * Dog is created
   */
 
+ /** FINAL KEYWORD
+  * 
+  * 1. Java Final variable
+  * Making any variable as final, you cannot change its value
+  */
+ 
+ class Bike9 {
+    final int speedLimit = 90; // final variable
+
+    void run() {
+        speedLimit = 400;
+    }
+    public static void main(String args []) {
+        Bike9 obj = new Bike9();
+        obj.run();
+    }
+ } // end of class
+ // Output: Compile Time Error
+
+ /** 
+  * 2. Java final method
+  * If you make any method as final, you cannot  override it.
+  */
+
+ class Bike {
+    final void run () {
+        System.out.println("Running...");
+    }
+ }
+
+ class Honda extends Bike {
+    void run() {
+        System.out.println("Running safely with 100kmph");
+
+        public static void main(String args[]) {
+            Honda honda = new Honda();
+            honda.run();
+        }
+    }
+ } // Output: Compile Time Error
+
+ 
+
+
+
+
 
 
  
