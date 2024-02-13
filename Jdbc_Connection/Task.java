@@ -1,57 +1,72 @@
 import java.sql.*;
-import java.util.Scanner;
-public class Task {
-    public static String jdbcURL = "jdbc:mysql://localhost:3306/jdbc";
-    public static String jdbcUsername = "root";
-    public static String jdbcPassword = "";
+
+public class Main {
     public static void main(String[] args) {
+        Connection connection = null;
+        Statement insertStatement = null;
+        Statement retrieveStatement = null;
+        ResultSet result = null;
+
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
-            Statement statement = connection.createStatement();
-            Scanner scanner = new Scanner(System.in);
-            PreparedStatement preparedStatement = connection
-                    .prepareStatement("INSERT INTO students (code, name, age, school) VALUES (?, ?, ?, ?)");
+            // Establish a database connection
+            connection = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/jdbc-mysql",
+                    "root",
+                    "root"
+            );
 
-            System.out.print("Enter name: ");
+            // Insert data using PreparedStatement
+            String insertQuery = "INSERT INTO students(name, age, school, dob) VALUES (?, ?, ?, ?)";
+            try (PreparedStatement insertPreparedStatement = connection.prepareStatement(insertQuery)) {
+                insertPreparedStatement.setString(1, "Jonas");
+                insertPreparedStatement.setInt(2, 18);
+                insertPreparedStatement.setString(3, "RCA");
+                // Assuming you have a valid date for dob
+                insertPreparedStatement.setDate(4, java.sql.Date.valueOf("2005-11-30"));
 
-            String nameInput = scanner.nextLine();
-            System.out.print("Enter age: ");
-            int ageInput = scanner.nextInt();
-            scanner.nextLine();
+                // Execute the prepared statement
+                int rowsAdded = insertPreparedStatement.executeUpdate();
 
-            System.out.print("Enter school: ");
-
-            String schoolInput = scanner.nextLine();
-            System.out.print("Enter code: ");
-
-            int codeInput = scanner.nextInt();
-            scanner.nextLine();
-            preparedStatement.setInt(1, codeInput);
-            preparedStatement.setString(2, nameInput);
-            preparedStatement.setInt(3, ageInput);
-            preparedStatement.setString(4, schoolInput);
-            preparedStatement.executeUpdate();
-            System.out.println("Record inserted successfully.");
-            String selectQuery = "SELECT * FROM students";
-            ResultSet resultSet = statement.executeQuery(selectQuery);
-
-            System.out.println("Records in the database:");
-
-            while (resultSet.next()) {
-                String name = resultSet.getString("name");
-                int age = resultSet.getInt("age");
-                String school = resultSet.getString("school");
-                String code = resultSet.getString("code");
-                System.out.println(
-                        "name: " + name + ", Age: " + age + ", School: " + school + ", Code: " + code);
+                // Check if any rows were affected by the INSERT operation
+                if (rowsAdded > 0) {
+                    System.out.println("Data inserted successfully!");
+                }
             }
-            resultSet.close();
-            statement.close();
-            connection.close();
-            scanner.close();
-        } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
+
+            // Retrieve data
+            retrieveStatement = connection.createStatement();
+            result = retrieveStatement.executeQuery("SELECT * FROM students");
+
+            // Process the ResultSet and print or use the retrieved data
+            while (result.next()) {
+                int code = result.getInt("code");
+                String name = result.getString("name");
+                int age = result.getInt("age");
+                String school = result.getString("school");
+
+                // Print or use the retrieved data as needed
+                System.out.println("Code: " + code + ", Name: " + name + ", Age: " + age + ", School: " + school);
+            }
+        } catch (SQLException e) {
+            // Handle SQL exceptions (e.g., connection issues, SQL errors)
+            e.getCause();
+        } finally {
+            // Close resources in a finally block
+            try {
+                if (result != null) result.close();
+                if (insertStatement != null) insertStatement.close();
+                if (retrieveStatement != null) retrieveStatement.close();
+                if (connection != null) connection.close();
+            } catch (SQLException e) {
+                e.getCause();
+            }
         }
     }
 }
+
+
+
+
+
+
+
