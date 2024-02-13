@@ -7,3 +7,6 @@ out
 #cache
 cache
 /build/
+
+# settings
+.settings
