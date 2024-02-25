@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.jmv.jdbc.rca&apos; to &apos;com.jonas.jdbc.rca&apos;&#x0A;- Original project: &apos;Registration_User&apos;&#x0A;- Original element: &apos;Registration_User/src/main/java/com.jmv.jdbc.rca&apos;&#x0A;- Renamed element: &apos;Registration_User/src/main/java/com.jonas.jdbc.rca&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings&#x0A;- Rename subpackages of the package" description="Rename package &apos;com.jmv.jdbc.rca&apos;" flags="589830" hierarchical="true" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java&lt;com.jmv.jdbc.rca" name="com.jonas.jdbc.rca" qualified="false" references="true" stamp="1707811892003" textual="false" version="1.0"/>
+</session>

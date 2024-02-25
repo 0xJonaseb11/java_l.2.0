@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="org.eclipse.jdt.debug.ui.jre_preference_page_context.columnWidth0" value="237"/>
+	<item key="org.eclipse.jdt.debug.ui.jre_preference_page_context.columnWidth1" value="931"/>
+	<item key="org.eclipse.jdt.debug.ui.jre_preference_page_context.columnWidth2" value="117"/>
+	<item key="org.eclipse.jdt.debug.ui.jre_preference_page_context.sortColumn" value="1"/>
+	<section name="org.eclipse.jdt.debug.ui.MAIN_METHOD_SELECTION_DIALOG">
+		<item key="ShowStatusLine" value="true"/>
+		<item key="History" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History&gt;&#x0A;&lt;historyRootNode&gt;&#x0A;&lt;infoNode&gt;=HibernetGroup/\/home\/jaz\/Eclipse-Interprise-Edition\/HibernetGroup\/src\/main\/webapp\/WEB-INF\/lib\/hibernate-core-6.4.3.Final.jar&amp;lt;org.hibernate(Version.class[Version&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=UserRegistration/\/home\/jaz\/Downloads\/apache-tomcat-10.1.18\/lib\/catalina.jar=/javadoc_location=/http:\/\/tomcat.apache.org\/tomcat-10.1-doc\/api\/=/=/owner.project.facets=/jst.web=/&amp;lt;org.apache.catalina.startup(Tomcat.class[Tomcat&lt;/infoNode&gt;&#x0A;&lt;/historyRootNode&gt;&#x0A;&lt;/History&gt;"/>
+		<section name="DialogBoundsSettings">
+			<item key="DIALOG_HEIGHT" value="500"/>
+			<item key="DIALOG_WIDTH" value="600"/>
+			<item key="DIALOG_X_ORIGIN" value="0"/>
+			<item key="DIALOG_Y_ORIGIN" value="0"/>
+			<item key="DIALOG_FONT_NAME" value="1|Ubuntu|11.0|0|GTK|1|"/>
+		</section>
+	</section>
+</section>
