@@ -1,0 +1,12 @@
+#out
+out
+
+#.idea
+.idea
+
+#cache
+cache
+/build/
+
+# settings
+.settings
