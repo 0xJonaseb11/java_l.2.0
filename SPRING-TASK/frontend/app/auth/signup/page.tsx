@@ -80,7 +80,7 @@ export default function SignUpPage() {
         JSON.stringify(signupData, null, 2)
       );
 
-      const response = await fetch("/api/auth/signup", {
+      const response = await fetch("http://localhost:8081/api/v1/auth/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
