@@ -67,7 +67,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<optional>true</optional>
+			<optional>false</optional>
 		</dependency>
 
 		<!-- Spring Boot Starter Test for testing purposes -->
