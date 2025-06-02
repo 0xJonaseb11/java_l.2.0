@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
 
     // Make request to your backend API
     const response = await fetch(
-      `${process.env.BACKEND_URL}/api/v1/auth/signup`,
+      `http://localhost:8081/api/v1/auth/signup`,
       {
         method: "POST",
         headers: {

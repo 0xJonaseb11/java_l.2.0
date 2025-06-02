@@ -80,7 +80,7 @@ export default function SignUpPage() {
         JSON.stringify(signupData, null, 2)
       );
 
-      const response = await fetch("http://localhost:8081/api/v1/auth/signup", {
+      const response = await fetch("/api/v1/auth/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -102,10 +102,10 @@ export default function SignUpPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 p-4">
-      <Card className="w-full max-w-md">
+    <div className="w-full flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 p-4">
+      <Card className="w-full max-w-5xl">
         <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl font-bold text-center">
+          <CardTitle className="text-2xl text-blue-600 font-bold text-center">
             Create Account
           </CardTitle>
           <CardDescription className="text-center">
@@ -259,8 +259,8 @@ export default function SignUpPage() {
             </div>
           </CardContent>
           <CardFooter className="flex flex-col space-y-4">
-            <Button type="submit" className="w-full" disabled={isLoading}>
-              {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+            <Button type="submit" className="w-full bg-blue-600 text-white hover:bg-blue-500" disabled={isLoading}>
+              {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin text-blue-600" />}
               Create Account
             </Button>
             <p className="text-sm text-center text-muted-foreground">
