@@ -29,7 +29,7 @@ export default function DashboardPage() {
     const fetchStats = async () => {
       try {
         // Simulate API calls to get dashboard stats
-        const [productsRes, usersRes] = await Promise.all([fetch("/api/products"), fetch("/api/users")])
+        const [productsRes, usersRes] = await Promise.all([fetch("http://localhost:8081/api/products"), fetch("http://localhost:8081/api/users")])
 
         const products = await productsRes.json()
         const users = await usersRes.json()

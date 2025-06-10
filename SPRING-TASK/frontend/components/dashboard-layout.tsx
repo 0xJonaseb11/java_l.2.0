@@ -49,9 +49,9 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
   const navigation = [
     { name: "Dashboard", href: "/dashboard", icon: Home },
     { name: "Products", href: "/dashboard/products", icon: Package },
-    { name: "Users", href: "/dashboard/users", icon: Users },
-    { name: "Files", href: "/dashboard/files", icon: FileText },
-    { name: "Settings", href: "/dashboard/settings", icon: Settings },
+    // { name: "Users", href: "/dashboard/users", icon: Users },
+    // { name: "Files", href: "/dashboard/files", icon: FileText },
+    // { name: "Settings", href: "/dashboard/settings", icon: Settings },
   ]
 
   return (
@@ -60,7 +60,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
       <div className="hidden md:flex md:w-64 md:flex-col">
         <div className="flex flex-col flex-grow pt-5 overflow-y-auto bg-card border-r">
           <div className="flex items-center flex-shrink-0 px-4">
-            <h1 className="text-xl font-bold">Inventory System</h1>
+            <h1 className="text-xl font-bold">Smart Stock</h1>
           </div>
           <div className="mt-5 flex-grow flex flex-col">
             <nav className="flex-1 px-2 space-y-1">

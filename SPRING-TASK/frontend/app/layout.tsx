@@ -9,7 +9,7 @@ import { AuthProvider } from "@/components/auth-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Inventory Management System",
+  title: "Smart stock",
   description: "A comprehensive inventory and product management system",
     generator: 'v0.dev'
 }

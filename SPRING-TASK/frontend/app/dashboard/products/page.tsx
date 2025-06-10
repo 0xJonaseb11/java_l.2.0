@@ -251,9 +251,9 @@ export default function ProductsPage() {
       <div className="space-y-6">
         <div className="flex justify-between items-center">
           <div>
-            <h1 className="text-3xl font-bold">Products</h1>
+            <h1 className="text-3xl font-bold">Smart Stock</h1>
             <p className="text-muted-foreground">
-              Manage your product inventory
+              Manage your stock
             </p>
           </div>
           <Dialog open={isAddDialogOpen} onOpenChange={setIsAddDialogOpen}>
@@ -267,7 +267,7 @@ export default function ProductsPage() {
               <DialogHeader>
                 <DialogTitle>Add New Product</DialogTitle>
                 <DialogDescription>
-                  Create a new product with inventory details
+                  Create a new car with inventory details
                 </DialogDescription>
               </DialogHeader>
               <div className="grid gap-4 py-4">
@@ -362,7 +362,7 @@ export default function ProductsPage() {
                 </div>
                 <div className="grid grid-cols-4 items-center gap-4">
                   <Label htmlFor="inventoryQuantity" className="text-right">
-                    Inventory Qty
+                    Car Weight
                   </Label>
                   <Input
                     id="inventoryQuantity"
@@ -382,7 +382,7 @@ export default function ProductsPage() {
                 </div>
               </div>
               <DialogFooter>
-                <Button onClick={handleAddProduct}>Add Product</Button>
+                <Button onClick={handleAddProduct}>Add Car</Button>
               </DialogFooter>
             </DialogContent>
           </Dialog>
@@ -392,7 +392,7 @@ export default function ProductsPage() {
           <div className="relative flex-1">
             <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
             <Input
-              placeholder="Search products..."
+              placeholder="Search cars..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="pl-10"
@@ -490,11 +490,11 @@ export default function ProductsPage() {
         {filteredProducts.length === 0 && (
           <div className="text-center py-12">
             <Package className="mx-auto h-12 w-12 text-muted-foreground" />
-            <h3 className="mt-2 text-sm font-semibold">No products found</h3>
+            <h3 className="mt-2 text-sm font-semibold">No cars found</h3>
             <p className="mt-1 text-sm text-muted-foreground">
               {searchTerm || selectedCategory !== "all"
                 ? "Try adjusting your search or filter criteria"
-                : "Get started by adding your first product"}
+                : "Get started by adding your first car"}
             </p>
           </div>
         )}
